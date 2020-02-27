@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Box({ color, width, height }) {
+function Box({ backgroundColor = "red", width = 400, height = 400 }) {
   const style = {
-    backgroundColor: color,
-    width: width,
-    height: height
+    backgroundColor,
+    width: `${width}px`,
+    height: `${height}px`
   }
   return (
     <div className="Box" style={style}>

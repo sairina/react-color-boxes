@@ -28,7 +28,7 @@ function BoxList() {
     let newBox = { ...box, id: uuid() };
     setBoxes(boxes => [...boxes, newBox]);
   };
-
+  
   return (
     <div className="BoxList">
       <NewBoxForm addBox={addBox} />
