@@ -12,12 +12,12 @@ function BoxList() {
   const renderBoxes = () => {
     return (
       <div className="BoxList-renderBoxes">
-        {boxes.map(box => (
-          <Box key={box.id}
-            id = {box.id}
-            backgroundColor={box.backgroundColor}
-            width={box.width}
-            height={box.height}
+        {boxes.map(({id, backgroundColor, width, height, removeBox}) => (
+          <Box key={id}
+            id = {id}
+            backgroundColor={backgroundColor}
+            width={width}
+            height={height}
             removeBox={removeBox}
           />
         ))}
