@@ -14,9 +14,11 @@ function BoxList() {
       <div className="BoxList-renderBoxes">
         {boxes.map(box => (
           <Box key={box.id}
+            id = {box.id}
             backgroundColor={box.backgroundColor}
             width={box.width}
             height={box.height}
+            removeBox={removeBox}
           />
         ))}
       </div>
@@ -28,6 +30,11 @@ function BoxList() {
     let newBox = { ...box, id: uuid() };
     setBoxes(boxes => [...boxes, newBox]);
   };
+
+  //removeBox from array of boxes
+  const removeBox = id => {
+    setBoxes(boxes.filter(box=> box.id !== id));
+  } 
   
   return (
     <div className="BoxList">
